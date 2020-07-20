@@ -1,0 +1,57 @@
+:root {
+    --green: #cceabb;
+    --white: #f7f7f7;
+    --dark: #3f3f44;
+    --flesh: #fdcb9e
+}
+
+
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.col1 {
+    height: 100vh;
+    width: 30vw;
+}
+
+.banner-cont {
+    background-color: var(--green);
+    border-bottom: solid 1px gray;
+    height: 20vh;
+    width: 30vw;
+}
+
+
+
+.project-cont {
+    background-color: var(--white);
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 5px 10px 0px;
+}
+
+.project-card {
+    background-color: var(--white);
+    width: 90%;
+    height: 3.5em;
+    padding-left: 15px;
+    border-bottom: solid thin gray;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.col2 {
+    background-color: blue;
+    height: 100vh;
+    width: 70vw;
+}
