@@ -1,42 +1,64 @@
 :root {
-    --white: #f4f4f4;
-    --green: #cceabb;
-    --flesh: #fdcb9e;
-    --black:#3f3f44;
+    --white: #f4f9f4;
+    --green: #a7d7c5;
+    --darkgreen: #74b49b;
+    --darkestgreen:#5c8d89;
     --main-font: 'Titillium Web', sans-serif;
 }
 
 .main-container {
     display: grid;
     grid-template-columns:30vw 70vw;
-    grid-template-rows: 100vh;
+    font-family: var(--main-font);
 }
 
 .col1 {
     background-color: var(--green);
-    font-family: ;
+    box-shadow: 1px 1px gray;
 }
 
 .banner-cont {
-    background-color: var(--green);
-    height: 25vh;
+    background-color: var(--darkgreen);
+    height: 10vh;
+    padding: 10px;
+    color: white;
     display: flex;
     justify-content: center;
     align-items:center;
     font-family: var(--main-font);
     border-bottom: thin solid gray;
+    border-right: thin solid gray;
 }
 
 
 .project-cont {
-    background-color: var(--green);
-    height: 75vh;
+    background-color: var(--darkgreen);
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px 0px 0px;
+    border-right: thin solid gray;
 }
 
+.project-btn-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px 0px 20px;
+}
 
+.add-btn {
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    border: thin gray;
+    margin: 10px;
+    font-size: 2em;
+}
+
+.add-project {
+    background-color: var(--white);
+}
 
 .project-card {
     height: 3em;
@@ -46,34 +68,37 @@
     justify-content: flex-start;
     align-items: center;
     padding: 5px 5px 5px 20px;
+    box-shadow: 0px 0px 4px 1px grey;
 }
 
 
-.col2 {
-    background-color: var(--flesh);
-}
+
 
 .project-header {
-    background-color: var(--flesh);
-    height: 15vh;
+    background-color: var(--darkestgreen);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 50px;
+    color:white
 }
 
-h1, h2 {
+h1 {
     margin: 0 auto;
     text-align: center;
 }
 
 .todo-list {
     background-color: var(--white);
-    height: 85vh;
-    padding: 20px 10px 20px 10px;
+    height: 70vh;
+    padding: 20px 10px 0px 10px;
 }
 
 .todo-card {
     height: 3em;
     width: 85%;
     margin: 0 auto;
-    border: thin solid grey;
+    border-bottom: thin solid #80808069;
     background-color: var(--white);
     padding: 5px 5px 5px 20px;
     display: grid;
@@ -86,6 +111,8 @@ h1, h2 {
     align-items: center;
 
 }
+
+
 
 .checkbox {
     margin-top: 15px;
@@ -101,5 +128,19 @@ h1, h2 {
     height: 25px;
     width: 23px;
     margin: 10px 10px 10px 20px;
+}
+
+
+.todo-btn-div {
+    height: 10vh;
+    background-color: var(--white);
+}
+
+
+.add-todo {
+    background-color: var(--darkestgreen);
+    float: right;
+    margin-right: 25px;
+    color: white;
 }
 
