@@ -1,1 +1,2 @@
-console.log("heelo")
+import "./index.css"
+
