@@ -17,3 +17,5 @@ mainContainer.append(addCol1())
 // Events 
 const addProjectCard = document.querySelector(".add-project")
 addProjectCard.addEventListener("click", _project.addNewProject)
+addProjectCard.addEventListener("click", _project.setIndex)
+

@@ -34,8 +34,18 @@ function renderProject(){
     }).join("")
 
     projectCont.innerHTML = cards
-    console.log(projectList)
+}
+
+function setIndex(){
+    let cards = document.querySelectorAll(".project-card");
+
+    for (let i = 0; i < projectList.length; i++){
+        cards[i].setAttribute("data-index", i)
+        console.log(cards[i])
+     }
+    
 }
 
 
-export{projectList, newProject, addNewProject, renderProject}
+
+export{projectList, newProject, addNewProject, renderProject, setIndex}
