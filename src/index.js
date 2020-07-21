@@ -1,6 +1,7 @@
 import "./main.css"
-import {addCol1, addNewProject} from "./projectList"
+import {addCol1, addNewProject} from "./DOM"
 import {createTags} from "./functions"
+import * as _project from "./project"
 
 
 
@@ -15,4 +16,4 @@ mainContainer.append(addCol1())
 
 // Events 
 const addProjectCard = document.querySelector(".add-project")
-addProjectCard.addEventListener("click", addNewProject)
+addProjectCard.addEventListener("click", _project.addNewProject)

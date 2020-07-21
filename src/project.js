@@ -1,7 +1,7 @@
-const list = []
+let projectList = []
 
 
-const addNew = (name) => {
+const newProject = (name) => {
     name = "Project";
     
     const getName = () => name;
@@ -13,6 +13,29 @@ const addNew = (name) => {
 };
 
 
+function addNewProject(){
+    let project = newProject()
+    projectList.push(project)
+    renderProject()
+
+}
 
 
-export{ addNew, list}
+function renderProject(){
+
+    let projectCont = document.querySelector(".project-cont")
+
+    let cards = projectList.map(card => {
+        return `
+        <div class="project-card">
+        <span> ${card.getName()}</span>
+       </div>
+        `
+    }).join("")
+
+    projectCont.innerHTML = cards
+    console.log(projectList)
+}
+
+
+export{projectList, newProject, addNewProject, renderProject}

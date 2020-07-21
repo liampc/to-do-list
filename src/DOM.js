@@ -1,6 +1,6 @@
 import "./main.css"
 import {createTags} from "./functions"
-import {addNew as Project, list as projectList} from "./project"
+
 
 
 
@@ -34,31 +34,10 @@ function addCol1(){
     return container;
 }
 
-function addNewProject(){
-    let newProject = Project()
-    projectList.push(newProject)
-    renderProject()
-
-}
-
-function renderProject(){
-
-     let projectCont = document.querySelector(".project-cont")
- 
-     let cards = projectList.map(card => {
-         return `
-         <div class="project-card">
-         <span> ${card.getName()}</span>
-        </div>
-         `
-     }).join("")
-
-     projectCont.innerHTML = cards
-     console.log(projectList)
-}
 
 
 
 
 
-export{addCol1, addNewProject, renderProject}
+
+export{addCol1}
