@@ -29,9 +29,9 @@ function addCol1(){
     //append
     projectCard.append(projectName)
     btnDiv.append(projectH2, addProjectBtn)
-    projectCont.append(btnDiv, projectCard)
+    projectCont.append(projectCard)
     banner.append(bannerName)
-    container.append(banner, projectCont)
+    container.append(banner, btnDiv, projectCont)
 
     return container;
 }
