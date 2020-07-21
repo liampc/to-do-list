@@ -18,6 +18,9 @@ function addCol1(){
 
 
     //text 
+    bannerName.textContent = "O-Note Again"
+    projectH2.textContent = "Projects"
+    addProjectBtn.textContent = "+"
 
     //append
     btnDiv.append(projectH2, addProjectBtn)
