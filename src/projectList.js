@@ -16,15 +16,20 @@ function addCol1(){
     let addProjectBtn = createTags("button", "add-btn")
     addProjectBtn.classList.add("add-project")
 
+    let projectCard = createTags("div", "project-card")
+    let projectName = createTags("span")
+
 
     //text 
     bannerName.textContent = "O-Note Again"
     projectH2.textContent = "Projects"
     addProjectBtn.textContent = "+"
+    projectName.textContent = "Inbox"
 
     //append
+    projectCard.append(projectName)
     btnDiv.append(projectH2, addProjectBtn)
-    projectCont.append(btnDiv)
+    projectCont.append(btnDiv, projectCard)
     banner.append(bannerName)
     container.append(banner, projectCont)
 
