@@ -1,5 +1,6 @@
 import "./main.css"
 import {createTags} from "./functions"
+import {addNew as Project, list as projectList} from "./project"
 
 
 
@@ -16,25 +17,48 @@ function addCol1(){
     let addProjectBtn = createTags("button", "add-btn")
     addProjectBtn.classList.add("add-project")
 
-    let projectCard = createTags("div", "project-card")
-    let projectName = createTags("span")
+   
 
 
     //text 
     bannerName.textContent = "O-Note Again"
     projectH2.textContent = "Projects"
     addProjectBtn.textContent = "+"
-    projectName.textContent = "Inbox"
+    
 
     //append
-    projectCard.append(projectName)
     btnDiv.append(projectH2, addProjectBtn)
-    projectCont.append(projectCard)
     banner.append(bannerName)
     container.append(banner, btnDiv, projectCont)
 
     return container;
 }
 
+function addNewProject(){
+    let newProject = Project()
+    projectList.push(newProject)
+    renderProject()
 
-export{addCol1}
+}
+
+function renderProject(){
+
+     let projectCont = document.querySelector(".project-cont")
+ 
+     let cards = projectList.map(card => {
+         return `
+         <div class="project-card">
+         <span> ${card.getName()}</span>
+        </div>
+         `
+     }).join("")
+
+     projectCont.innerHTML = cards
+     console.log(projectList)
+}
+
+
+
+
+
+export{addCol1, addNewProject, renderProject}
