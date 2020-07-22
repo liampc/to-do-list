@@ -46,6 +46,9 @@ function setIndex(){
     
 }
 
+function showProjectPage(e){
+    let index = e.target.getAttribute("data-index")
+    console.log(index)
+}
 
-
-export{projectList, newProject, addNewProject, renderProject, setIndex}
+export{projectList, newProject, addNewProject, renderProject, setIndex, showProjectPage}
