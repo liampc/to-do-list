@@ -72,11 +72,15 @@
 }
 
 
-
+.col2 {
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: 13vh 75vh 10vh;
+}
 
 .project-header {
     background-color: var(--darkestgreen);
-    height: 10vh;
+    
     display: flex;
     align-items: center;
     padding: 10px 10px 10px 50px;
@@ -90,7 +94,6 @@ h1 {
 
 .todo-list {
     background-color: var(--white);
-    height: 70vh;
     padding: 20px 10px 0px 10px;
 }
 
@@ -132,7 +135,6 @@ h1 {
 
 
 .todo-btn-div {
-    height: 10vh;
     background-color: var(--white);
 }
 

@@ -1,5 +1,5 @@
 import "./main.css"
-import {addCol1, addNewProject} from "./DOM"
+import {addCol1, addCol2} from "./DOM"
 import {createTags} from "./functions"
 import * as _project from "./project"
 
@@ -12,6 +12,7 @@ const content = document.querySelector("#content")
 let mainContainer = createTags("div", "main-container")
 content.append(mainContainer)
 mainContainer.append(addCol1())
+mainContainer.append(addCol2())
 
 
 // Events 

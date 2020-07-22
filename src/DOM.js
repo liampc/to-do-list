@@ -34,10 +34,31 @@ function addCol1(){
     return container;
 }
 
+function addCol2(){
+    let col2 = createTags("div", "col2")
+
+    let pHeader = createTags("div", "project-header")
+    let todoList = createTags("div", "todo-list")
+    let todoBtnDiv = createTags("div", "todo-btn-div")
+
+    let pName = createTags("h2")
+    let addTodo = createTags("button", "add-btn")
+    addTodo.classList.add("add-todo")
+
+    //text 
+    pName.innerHTML = "Project Name"
+    addTodo.innerHTML = "+"
+
+    //append
+    todoBtnDiv.append(addTodo)
+    pHeader.append(pName)
+    col2.append(pHeader, todoList, todoBtnDiv)
+
+    return col2;
+}
 
 
 
 
 
-
-export{addCol1}
+export{addCol1, addCol2}
