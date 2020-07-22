@@ -3,15 +3,17 @@ let projectList = []
 
 const newProject = (name) => {
     name = "Project";
-    
+    let todos = []
+
     const getName = () => name;
     const changeName = (newName) => {
         newName = prompt("Change project Name")
         name = newName
     };
+    const getTodos = () => todos
 
     return {
-        getName, changeName
+        getName, changeName, getTodos
     }
 };
 
@@ -52,7 +54,13 @@ function setIndex(){
 function showProjectPage(e){
     if (e.target.className == "project-card"){
         let index = e.target.getAttribute("data-index")
-        console.log(index)
+        let name = projectList[index].getName()
+        let header = document.querySelector(".project-header h2")
+
+        header.innerHTML = name;
+        let list = projectList[index].getTodos()
+        console.log(list)
+        
     }
 }
     
