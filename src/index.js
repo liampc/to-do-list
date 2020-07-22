@@ -22,3 +22,4 @@ addProjectCard.addEventListener("click", _project.setIndex)
 
 let projectCont = document.querySelector(".project-cont")
 projectCont.addEventListener("click", _project.showProjectPage)
+projectCont.addEventListener("click", _project.changeName )

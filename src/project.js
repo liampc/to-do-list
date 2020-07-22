@@ -5,7 +5,10 @@ const newProject = (name) => {
     name = "Project";
     
     const getName = () => name;
-    const changeName = (newName) => name = newName;
+    const changeName = (newName) => {
+        newName = prompt("Change project Name")
+        name = newName
+    };
 
     return {
         getName, changeName
@@ -41,14 +44,29 @@ function setIndex(){
 
     for (let i = 0; i < projectList.length; i++){
         cards[i].setAttribute("data-index", i)
-        console.log(cards[i])
+        
      }
     
 }
 
 function showProjectPage(e){
-    let index = e.target.getAttribute("data-index")
-    console.log(index)
+    if (e.target.className == "project-card"){
+        let index = e.target.getAttribute("data-index")
+        console.log(index)
+    }
+}
+    
+
+
+function changeName(e){
+    if (e.target.tagName == "SPAN"){
+        let index = e.target.parentNode.getAttribute("data-index")
+        projectList[index].changeName();
+        renderProject();
+        setIndex();
+    }
+    
 }
 
-export{projectList, newProject, addNewProject, renderProject, setIndex, showProjectPage}
+
+export{projectList, newProject, addNewProject, renderProject, setIndex, showProjectPage, changeName}
