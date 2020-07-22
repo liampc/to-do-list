@@ -17,10 +17,10 @@ mainContainer.append(addCol2())
 
 // Events 
 const addProjectCard = document.querySelector(".add-project")
-addProjectCard.addEventListener("click", _project.addNewProject)
-addProjectCard.addEventListener("click", _project.setIndex)
+addProjectCard.addEventListener("click", _project.Project.addNewProject)
+addProjectCard.addEventListener("click", _project.Project.setIndex)
 
 
 let projectCont = document.querySelector(".project-cont")
-projectCont.addEventListener("click", _project.showProjectPage)
-projectCont.addEventListener("click", _project.changeName )
+projectCont.addEventListener("click", _project.Project.showProjectPage)
+projectCont.addEventListener("click", _project.Project.changeName)

@@ -1,4 +1,4 @@
-let projectList = []
+
 
 
 const newProject = (name) => {
@@ -18,63 +18,83 @@ const newProject = (name) => {
 };
 
 
-function addNewProject(){
-    let project = newProject()
-    projectList.push(project)
-    renderProject()
+const Project = (() => {
 
-}
+    //global Data
+    const projectList = []
 
-
-function renderProject(){
-
-    let projectCont = document.querySelector(".project-cont")
-
-    let cards = projectList.map(card => {
-        return `
-        <div class="project-card">
-        <span> ${card.getName()}</span>
-       </div>
-        `
-    }).join("")
-
-    projectCont.innerHTML = cards
-}
-
-function setIndex(){
-    let cards = document.querySelectorAll(".project-card");
-
-    for (let i = 0; i < projectList.length; i++){
-        cards[i].setAttribute("data-index", i)
-        
-     }
+    //DOM
     
-}
 
-function showProjectPage(e){
-    if (e.target.className == "project-card"){
-        let index = e.target.getAttribute("data-index")
-        let name = projectList[index].getName()
-        let header = document.querySelector(".project-header h2")
 
-        header.innerHTML = name;
-        let list = projectList[index].getTodos()
-        console.log(list)
+    //function
+    const addNewProject = () => {
+        let project = newProject()
+        projectList.push(project)
+        renderProject()
+    }
+
+
+
+    const renderProject = () => {
+
+        let projectCont = document.querySelector(".project-cont")
+
+        let cards = projectList.map(card => {
+            return `
+            <div class="project-card">
+            <span> ${card.getName()}</span>
+        </div>
+            `
+        }).join("")
+
+        projectCont.innerHTML = cards
+    }
+
+
+
+    const setIndex = () => {
+        let cards = document.querySelectorAll(".project-card");
+
+        for (let i = 0; i < projectList.length; i++){
+            cards[i].setAttribute("data-index", i)
+            
+        }
         
     }
-}
-    
 
 
-function changeName(e){
-    if (e.target.tagName == "SPAN"){
-        let index = e.target.parentNode.getAttribute("data-index")
-        projectList[index].changeName();
-        renderProject();
-        setIndex();
+
+    const showProjectPage = (e) => {
+        if (e.target.className == "project-card"){
+            let index = e.target.getAttribute("data-index")
+            let name = projectList[index].getName()
+            let header = document.querySelector(".project-header h2")
+
+            header.innerHTML = name;
+            let list = projectList[index].getTodos()
+            console.log(list)
+            
+        }
     }
-    
-}
+        
 
 
-export{projectList, newProject, addNewProject, renderProject, setIndex, showProjectPage, changeName}
+    const changeName = (e) => {
+        if (e.target.tagName == "SPAN"){
+            let index = e.target.parentNode.getAttribute("data-index")
+            projectList[index].changeName();
+            renderProject();
+            setIndex();
+        }
+        
+    }
+
+    return {
+        projectList, addNewProject, setIndex, showProjectPage, changeName
+    }
+
+
+})();
+
+export{Project}
