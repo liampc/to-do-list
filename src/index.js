@@ -27,4 +27,4 @@ projectCont.addEventListener("click", Project.changeName)
 
 let addTodo = document.querySelector(".add-todo")
 addTodo.addEventListener("click", showForms)
-addTodo.addEventListener("click", addForms)
+

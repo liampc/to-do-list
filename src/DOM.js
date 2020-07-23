@@ -40,7 +40,7 @@ function addCol2(){
     let pHeader = createTags("div", "project-header")
     let todoList = createTags("div", "todo-list")
     let todoBtnDiv = createTags("div", "todo-btn-div")
-    let forms = createTags("div", "formField")
+    let forms = createTags("div", "form-field")
 
 
     let pName = createTags("h2")
@@ -65,7 +65,7 @@ function addCol2(){
 }
 
 function showForms(){
-    let forms = document.querySelector(".formField")
+    let forms = document.querySelector(".form-field")
 
     if (forms.style.visibility === "hidden") {
         addForms()
@@ -77,20 +77,21 @@ function showForms(){
 }
 
 function addForms(){
-    let forms = document.querySelector(".formField")
+    let forms = document.querySelector(".form-field")
 
     forms.innerHTML = 
         `
         <label for="noteForm"></label>
-                    <input type="text"  name="inputNote" class="inputNote" placeholder="Note">
-                    <label for="dueDate"> </label>
-                    <input type="date"  name="dueDate" class="dueDate">
+                    <input type="text"  name="input-note" class="input-note" placeholder="Note">
+                    <label for="dueDate">Due Date </label>
+                    <input type="date"  name="due-date" class="due-date">
                     <label for="priority"> Priority </label>
                     <select name="priority">
                         <option value="low"> Low </option>
                         <option value="medium"> Medium </option>
                         <option value="high"> High </option>
                     </select>
+                
         `
     
 }

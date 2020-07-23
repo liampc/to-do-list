@@ -75,8 +75,9 @@
 .col2 {
     background-color: var(--white);
     display: grid;
-    grid-template-rows: 13vh 75vh 10vh;
+    grid-template-rows: 13vh 12vh 65vh 10vh;
 }
+
 
 .project-header {
     background-color: var(--darkestgreen);
@@ -84,8 +85,25 @@
     display: flex;
     align-items: center;
     padding: 10px 10px 10px 50px;
-    color:white
+    color:white;
+
 }
+
+.form-field {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--darkgreen);
+    border-bottom: thin solid grey;
+}
+
+.form-field input:first-of-type {
+    width: 45%;
+    height: 30%;
+    background-color: var(--green);
+    border: thin var(--darkgreen) solid;
+}
+
 
 h1 {
     margin: 0 auto;
