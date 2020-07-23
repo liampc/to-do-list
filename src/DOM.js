@@ -1,6 +1,6 @@
 import "./main.css"
 import {createTags} from "./functions"
-import {saveNotes} from "./todos"
+import {Todo} from "./todos"
 
 
 
@@ -73,7 +73,7 @@ function showForms(){
         
       } else {
         forms.style.visibility = "hidden";
-        saveNotes()
+        Todo.saveNote()
       }
 }
 

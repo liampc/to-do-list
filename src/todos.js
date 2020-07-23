@@ -4,9 +4,9 @@ let newNote = () => {
     let notes = {}
 
     const saveNote = (newNote) => {
-        notes.note = newNote
+        notes["note"] = newNote
     }
-    const getNote =  () => notes.note
+    const getNote =  () => notes["note"]
 
     return {
         saveNote, getNote
@@ -15,21 +15,28 @@ let newNote = () => {
 }
 
 
-function saveNotes(){
+let Todo = (() => {
 
-    let inputNote = document.querySelector(".input-note")
-
+    //variables
     let newTodo = newNote()
+    
 
-    newTodo.saveNote(inputNote.value)
+    const saveNote = () => {
+        let inputNote = document.querySelector(".input-note")
+        newTodo.saveNote(inputNote.value)
+        let note = newTodo.getNote()
+        console.log(note)
+    }
 
-    let test = newTodo.getNote()
-    console.log(test)
+    
+    
+
+    return {
+        saveNote
+    }
+
+})()
 
 
-
-}
-
-
-export{newNote, saveNotes}
+export{Todo}
 
