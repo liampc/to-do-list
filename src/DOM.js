@@ -68,6 +68,7 @@ function showForms(){
     let forms = document.querySelector(".formField")
 
     if (forms.style.visibility === "hidden") {
+        addForms()
         forms.style.visibility = "visible";
         
       } else {
@@ -75,6 +76,25 @@ function showForms(){
       }
 }
 
+function addForms(){
+    let forms = document.querySelector(".formField")
+
+    forms.innerHTML = 
+        `
+        <label for="noteForm"></label>
+                    <input type="text"  name="inputNote" class="inputNote" placeholder="Note">
+                    <label for="dueDate"> </label>
+                    <input type="date"  name="dueDate" class="dueDate">
+                    <label for="priority"> Priority </label>
+                    <select name="priority">
+                        <option value="low"> Low </option>
+                        <option value="medium"> Medium </option>
+                        <option value="high"> High </option>
+                    </select>
+        `
+    
+}
 
 
-export{addCol1, addCol2, showForms}
+
+export{addCol1, addCol2, showForms, addForms}
