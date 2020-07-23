@@ -72,8 +72,6 @@ const Project = (() => {
             let header = document.querySelector(".project-header h2")
 
             header.innerHTML = name;
-            let list = projectList[index].getTodos()
-            console.log(list)
             
         }
     }
@@ -98,7 +96,6 @@ const Project = (() => {
             card.classList.remove("selected")
         })
         project.classList.add("selected")
-        console.log(projectCards)
 
     }
 

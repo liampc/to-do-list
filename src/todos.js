@@ -1,3 +1,5 @@
+import {Project} from './project';
+
 
 function NewNote(note, dueDate, priority){
         this.note = note,
@@ -9,7 +11,26 @@ function NewNote(note, dueDate, priority){
 let Todo = (() => {
 
     //variables
-    let todoList = [];
+    let todoList;
+    
+
+    const getProjectList = () => {
+        let projects = document.querySelectorAll(".project-card")
+        let index;
+        projects.forEach(project => {
+            if (project.classList.contains("selected")){
+                index = project.getAttribute("data-index")
+                
+            }
+        })
+        
+        if (index !== undefined){
+            let list = Project.projectList[index].getTodos()
+            todoList = list
+        }
+        
+    }
+
     
     const addNewTodo = () => {
         let note = document.querySelector(".input-note").value
@@ -18,9 +39,8 @@ let Todo = (() => {
         let priority = select.options[select.selectedIndex].value
         
         let newTodo = new NewNote(note,dueDate, priority)
+        getProjectList()
         todoList.push(newTodo)
-        console.log(todoList)
-
     }
 
     const render = () => {
@@ -40,8 +60,14 @@ let Todo = (() => {
         list.innerHTML = todos;
     }
 
+
+    //init
+
+    getProjectList();
+
+
     return {
-        addNewTodo, render
+        addNewTodo, render, getProjectList
     }
 
 })()
