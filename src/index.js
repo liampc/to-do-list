@@ -1,5 +1,5 @@
 import "./main.css"
-import {addCol1, addCol2} from "./DOM"
+import {addCol1, addCol2, showForms} from "./DOM"
 import {createTags} from "./functions"
 import {Project} from "./project"
 
@@ -24,3 +24,6 @@ addProjectCard.addEventListener("click", Project.setIndex)
 let projectCont = document.querySelector(".project-cont")
 projectCont.addEventListener("click", Project.showProjectPage)
 projectCont.addEventListener("click", Project.changeName)
+
+let addTodo = document.querySelector(".add-todo")
+addTodo.addEventListener("click", showForms)

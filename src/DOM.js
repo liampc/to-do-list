@@ -50,6 +50,11 @@ function addCol2(){
     //text 
     pName.innerHTML = "Project Name"
     addTodo.innerHTML = "+"
+    
+
+    //display
+    forms.style.visibility = "hidden"
+    
 
     //append
     todoBtnDiv.append(addTodo)
@@ -59,8 +64,17 @@ function addCol2(){
     return col2;
 }
 
+function showForms(){
+    let forms = document.querySelector(".formField")
+
+    if (forms.style.visibility === "hidden") {
+        forms.style.visibility = "visible";
+        
+      } else {
+        forms.style.visibility = "hidden";
+      }
+}
 
 
 
-
-export{addCol1, addCol2, addForms, showTemplate}
+export{addCol1, addCol2, showForms}
