@@ -49,9 +49,14 @@ let Todo = (() => {
         console.log(selected)
     }
     
+    const saveTodo = () => {
+        saveNote()
+        saveDueDate()
+        savePriority()
+    }
 
     return {
-        saveNote, saveDueDate, savePriority
+        saveTodo
     }
 
 })()
