@@ -40,6 +40,8 @@ function addCol2(){
     let pHeader = createTags("div", "project-header")
     let todoList = createTags("div", "todo-list")
     let todoBtnDiv = createTags("div", "todo-btn-div")
+    let forms = createTags("div", "formField")
+
 
     let pName = createTags("h2")
     let addTodo = createTags("button", "add-btn")
@@ -52,7 +54,7 @@ function addCol2(){
     //append
     todoBtnDiv.append(addTodo)
     pHeader.append(pName)
-    col2.append(pHeader, todoList, todoBtnDiv)
+    col2.append(pHeader, forms, todoList, todoBtnDiv)
 
     return col2;
 }
@@ -61,4 +63,4 @@ function addCol2(){
 
 
 
-export{addCol1, addCol2}
+export{addCol1, addCol2, addForms, showTemplate}
