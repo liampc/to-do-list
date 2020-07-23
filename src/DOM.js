@@ -74,6 +74,8 @@ function showForms(){
       } else {
         forms.style.visibility = "hidden";
         Todo.saveNote()
+        Todo.saveDueDate()
+        Todo.savePriority()
       }
 }
 
@@ -87,7 +89,7 @@ function addForms(){
                     <label for="dueDate">Due Date </label>
                     <input type="date"  name="due-date" class="due-date">
                     <label for="priority"> Priority </label>
-                    <select name="priority">
+                    <select name="priority" id="priority">
                         <option value="low"> Low </option>
                         <option value="medium"> Medium </option>
                         <option value="high"> High </option>

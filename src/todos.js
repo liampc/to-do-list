@@ -8,8 +8,14 @@ let newNote = () => {
     }
     const getNote =  () => notes["note"]
 
+    const saveDueDate = (dueDate) => {
+        notes["dueDate"] = dueDate
+    }
+
+    const getDueDate = () => notes["dueDate"]
+
     return {
-        saveNote, getNote
+        saveNote, getNote, saveDueDate, getDueDate
     }
 
 }
@@ -28,11 +34,24 @@ let Todo = (() => {
         console.log(note)
     }
 
-    
+    const saveDueDate = () => {
+        let dueDate = document.querySelector(".due-date")
+
+        newTodo.saveDueDate(dueDate.value)
+        let date = newTodo.getDueDate()
+        console.log(date)
+
+    }
+
+    const savePriority = () => {
+        let priority = document.querySelector("#priority")
+        let selected = priority.options[priority.selectedIndex].value
+        console.log(selected)
+    }
     
 
     return {
-        saveNote
+        saveNote, saveDueDate, savePriority
     }
 
 })()
