@@ -90,8 +90,20 @@ const Project = (() => {
         
     }
 
+    const selectProject = (e) => {
+        let projectCards = document.querySelectorAll(".project-card")
+        let project = e.target
+
+        projectCards.forEach(card => {
+            card.classList.remove("selected")
+        })
+        project.classList.add("selected")
+        console.log(projectCards)
+
+    }
+
     return {
-        projectList, addNewProject, setIndex, showProjectPage, changeName
+        projectList, addNewProject, setIndex, showProjectPage, changeName, selectProject
     }
 
 

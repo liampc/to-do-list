@@ -24,6 +24,8 @@ addProjectCard.addEventListener("click", Project.setIndex)
 let projectCont = document.querySelector(".project-cont")
 projectCont.addEventListener("click", Project.showProjectPage)
 projectCont.addEventListener("click", Project.changeName)
+projectCont.addEventListener("click", Project.selectProject)
+
 
 let addTodo = document.querySelector(".add-todo")
 addTodo.addEventListener("click", showForms)

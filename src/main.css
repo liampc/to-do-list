@@ -71,6 +71,11 @@
     box-shadow: 0px 0px 4px 1px grey;
 }
 
+.selected {
+    background-color: var(--darkestgreen);
+    color: var(--white)
+}
+
 
 .col2 {
     background-color: var(--white);
