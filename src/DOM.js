@@ -73,7 +73,7 @@ function showForms(){
         
       } else {
         forms.style.visibility = "hidden";
-        Todo.saveTodo()
+        Todo.addNewTodo()
       }
 }
 

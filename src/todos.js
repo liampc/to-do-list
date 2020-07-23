@@ -1,62 +1,30 @@
 
-let newNote = () => {
-
-    let notes = {}
-
-    const saveNote = (newNote) => {
-        notes["note"] = newNote
-    }
-    const getNote =  () => notes["note"]
-
-    const saveDueDate = (dueDate) => {
-        notes["dueDate"] = dueDate
-    }
-
-    const getDueDate = () => notes["dueDate"]
-
-    return {
-        saveNote, getNote, saveDueDate, getDueDate
-    }
-
+function NewNote(note, dueDate, priority){
+        this.note = note,
+        this.dueDate = dueDate,
+        this.priority = priority
 }
 
 
 let Todo = (() => {
 
     //variables
-    let newTodo = newNote()
+    let todoList = [];
     
+    const addNewTodo = () => {
+        let note = document.querySelector(".input-note").value
+        let dueDate = document.querySelector(".due-date").value
+        let select = document.querySelector("#priority")
+        let priority = select.options[select.selectedIndex].value
+        
+        let newTodo = new NewNote(note,dueDate, priority)
+        todoList.push(newTodo)
+        console.log(todoList)
 
-    const saveNote = () => {
-        let inputNote = document.querySelector(".input-note")
-        newTodo.saveNote(inputNote.value)
-        let note = newTodo.getNote()
-        console.log(note)
-    }
-
-    const saveDueDate = () => {
-        let dueDate = document.querySelector(".due-date")
-
-        newTodo.saveDueDate(dueDate.value)
-        let date = newTodo.getDueDate()
-        console.log(date)
-
-    }
-
-    const savePriority = () => {
-        let priority = document.querySelector("#priority")
-        let selected = priority.options[priority.selectedIndex].value
-        console.log(selected)
-    }
-    
-    const saveTodo = () => {
-        saveNote()
-        saveDueDate()
-        savePriority()
     }
 
     return {
-        saveTodo
+        addNewTodo
     }
 
 })()
