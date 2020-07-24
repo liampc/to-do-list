@@ -47,7 +47,8 @@ let Todo = (() => {
     }
 
     const render = () => {
-        let list = document.querySelector(".todo-list")
+        let projlist = document.querySelector(".todo-list")
+        // let complist = document.querySelector(".completed")
 
         let todos = todoList.map(todo => {
             return `
@@ -60,7 +61,19 @@ let Todo = (() => {
             </div>
             `
         })
-        list.innerHTML = todos;
+
+        // let done = completedList.map(task => {
+        //     return `
+        //     <div class="todo-card">
+        //     <span> ${task.note}</span>
+        //     <span> ${task.dueDate}</span>
+        //     <span> ${task.priority}</span>
+        //     </div>
+        //     `
+        // })
+
+        // complist.innerHTML = done
+        projlist.innerHTML = todos;
     }
 
 
@@ -76,6 +89,8 @@ let Todo = (() => {
             })
         })
     }  
+
+
 
     //init
 
