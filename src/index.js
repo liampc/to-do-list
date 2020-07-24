@@ -33,3 +33,6 @@ let addTodo = document.querySelector(".add-todo")
 addTodo.addEventListener("click", showForms)
 addTodo.addEventListener("click", Todo.checkBox)
 
+let todoList = document.querySelector(".todo-list")
+todoList.addEventListener("click", Todo.checkBox)
+

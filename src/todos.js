@@ -84,21 +84,16 @@ let Todo = (() => {
         }
     }
 
-    const checkBox = () => {
-        let checkboxes = document.querySelectorAll(".checkbox")
 
-        checkboxes.forEach(box => {
-            box.addEventListener("click", (e) => {
-                if (e.target.checked == true){
-                    let card = e.target.parentNode
-                    card.classList.add("checked")
-                    let index = card.getAttribute("data-index")
-                    let todo = todoList.splice(index, 1)
-                    completedList.push(todo[0])
-                    render()
-                }
-            })
-        })
+    const checkBox = (e) => {
+        if (e.target.classList == "checkbox"){
+            let card = e.target.parentNode
+            card.classList.add("checked")
+            let index = card.getAttribute("data-index")
+            let todo = todoList.splice(index,1)
+            completedList.push(todo[0])
+            render()
+        }
     }
 
    
