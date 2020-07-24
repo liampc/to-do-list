@@ -60,7 +60,7 @@ let Todo = (() => {
             <button class="delete-btn">x</button>
             </div>
             `
-        })
+        }).join("")
 
         let done = completedList.map(task => {
             return `
@@ -69,7 +69,7 @@ let Todo = (() => {
             <span> ${task.dueDate}</span>
             </div>
             `
-        })
+        }).join("")
 
         complist.innerHTML = done
         projlist.innerHTML = todos;
