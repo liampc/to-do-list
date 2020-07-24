@@ -60,7 +60,7 @@ const DOM = (() => {
         let forms = createTags("div", "form-field")
         let todoList = createTags("div", "todo-list")
         let completedList = createTags("div", "completed")
-        let todoBtnDiv = createTags("div", "todo-btn-div")
+        //let todoBtnDiv = createTags("div", "todo-btn-div")
         
         // elements under main divs
         let pName = createTags("h2")
@@ -77,9 +77,9 @@ const DOM = (() => {
         
 
         //append
-        todoBtnDiv.append(addTodo)
-        pHeader.append(pName)
-        col2.append(pHeader, forms, todoList, completedList, todoBtnDiv)
+        //todoBtnDiv.append(addTodo)
+        pHeader.append(pName, addTodo)
+        col2.append(pHeader, forms, todoList, completedList)
 
         return col2;
     }
@@ -110,7 +110,7 @@ const DOM = (() => {
         forms.innerHTML = 
             `
             <label for="noteForm"></label>
-                        <input type="text"  name="input-note" class="input-note" placeholder="Note">
+                        <input type="text"  name="input-note" class="input-note" placeholder="Note" required>
                         <label for="dueDate">Due Date </label>
                         <input type="date"  name="due-date" class="due-date">
                         <label for="priority"> Priority </label>
