@@ -1,5 +1,6 @@
 import "./main.css"
-import {DOM, Events} from "./DOM"
+import {DOM} from "./DOM"
+import {Events} from "./events"
 
 
 //get content id

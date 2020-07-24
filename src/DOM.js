@@ -1,7 +1,7 @@
 import "./main.css"
 import {createTags} from "./functions"
 import {Todo} from "./todos"
-import {Project} from "./project"
+
 
 
 // Module for appending/ showing display
@@ -24,8 +24,6 @@ const DOM = (() => {
         let projectH2 = createTags("h2")
         let addProjectBtn = createTags("button", "add-btn")
         addProjectBtn.classList.add("add-project")
-
-    
 
 
         //text 
@@ -134,53 +132,5 @@ const DOM = (() => {
 }
 )();
 
-// MODULE for Event listeners
 
-const Events = (() => {
-
-    const addProjectCard = () => {
-        const addProjectCard = document.querySelector(".add-project")
-        addProjectCard.addEventListener("click", Project.addNewProject)
-        addProjectCard.addEventListener("click", Project.setIndex)
-    }
-
-    const projectCont = () => {
-        const projectCont = document.querySelector(".project-cont")
-        projectCont.addEventListener("click", Project.showProjectPage)
-        projectCont.addEventListener("click", Project.changeName)
-        projectCont.addEventListener("click", Project.selectProject)
-        projectCont.addEventListener("click", Todo.getLists)
-        projectCont.addEventListener("click", Todo.render)
-    }
-
-   const addTodo = () => {
-        const addTodo = document.querySelector(".add-todo")
-        addTodo.addEventListener("click", DOM.showForms)
-        addTodo.addEventListener("click", Todo.checkBox)
-   }
-
-   const todoList = () => {
-        const  todoList = document.querySelector(".todo-list")
-        todoList.addEventListener("click", Todo.checkBox)
-        todoList.addEventListener("click", Todo.deleteCard)
-   }
-
-
-
-    //init
-    const init = () => {
-        addProjectCard()
-        projectCont()
-        addTodo()
-        todoList()
-    }
-
-    return {
-        init
-    }
-
-
-})();
-
-
-export{DOM, Events}
+export{DOM}
