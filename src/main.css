@@ -135,8 +135,8 @@ h1 {
     overflow: auto;
 }
 
-.todo-card {
-    height: 3em;
+.todo-card, .completed-card{
+    height: 2.5em;
     width: 85%;
     margin: 0 auto;
     border-bottom: thin solid #80808069;
@@ -155,16 +155,9 @@ h1 {
 }
 
 .completed-card {
-    height: 3em;
-    width: 85%;
-    margin: 0 auto;
-    border-bottom: thin solid #80808069;
-    background-color: var(--white);
-    padding: 5px 5px 5px 20px;
-    color:gray;
     text-decoration: line-through;
-    display: grid;
     grid-template-columns: 80% 20%;
+    color:gray;
 }
 
 .completed {
