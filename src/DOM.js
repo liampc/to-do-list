@@ -60,7 +60,6 @@ const DOM = (() => {
         let forms = createTags("div", "form-field")
         let todoList = createTags("div", "todo-list")
         let completedList = createTags("div", "completed")
-        //let todoBtnDiv = createTags("div", "todo-btn-div")
         
         // elements under main divs
         let pName = createTags("h2")
@@ -69,7 +68,7 @@ const DOM = (() => {
 
 
         //text 
-        pName.innerHTML = "Project Name"
+        pName.innerHTML = "Project"
         addTodo.innerHTML = "+"
 
         //display
@@ -77,7 +76,6 @@ const DOM = (() => {
         
 
         //append
-        //todoBtnDiv.append(addTodo)
         pHeader.append(pName, addTodo)
         col2.append(pHeader, forms, todoList, completedList)
 

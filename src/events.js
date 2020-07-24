@@ -34,7 +34,6 @@ const Events = (() => {
    }
 
 
-
     //init
     const init = () => {
         addProjectCard()

@@ -26,9 +26,6 @@ const Project = (() => {
     //global Data
     const projectList = []
 
-    //DOM
-    
-
 
     //function
     const addNewProject = () => {
@@ -114,10 +111,23 @@ const Project = (() => {
         }
     }
 
+    const initial = () =>  {
+        let initial = newProject()
+        projectList.push(initial)
+        renderProject()
+        let project = document.querySelector(".project-card")
+        project.classList.add("selected")
+        showProjectPage()
+    }
+       
+
     
 
+
     return {
-        projectList, addNewProject, setIndex, showProjectPage, changeName, selectProject, deleteProject
+        projectList, addNewProject, setIndex, 
+        showProjectPage, changeName, selectProject, 
+        deleteProject, initial
 
     }
 
