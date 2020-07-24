@@ -46,13 +46,13 @@ function addCol2(){
 
 
     let pName = createTags("h2")
-    let completed = createTags("h2")
+    //let completed = createTags("h2")
     let addTodo = createTags("button", "add-btn")
     addTodo.classList.add("add-todo")
 
     //text 
     pName.innerHTML = "Project Name"
-    completed.innerHTML = "Completed"
+    //completed.innerHTML = "Completed"
     addTodo.innerHTML = "+"
 
     
@@ -63,7 +63,7 @@ function addCol2(){
 
     //append
     todoBtnDiv.append(addTodo)
-    completedList.append(completed)
+    //completedList.append(completed)
     pHeader.append(pName)
     col2.append(pHeader, forms, todoList, completedList, todoBtnDiv)
 
