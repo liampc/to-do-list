@@ -38,6 +38,7 @@
     flex-direction: column;
     padding: 20px 0px 0px 0px;
     border-right: thin solid gray;
+    overflow: auto;
 }
 
 .project-btn-div{
@@ -118,6 +119,7 @@ h1 {
 .todo-list {
     background-color: var(--white);
     padding: 20px 10px 0px 10px;
+    overflow: auto;
 }
 
 .todo-card {
@@ -152,6 +154,9 @@ h1 {
     grid-template-columns: 80% 20%;
 }
 
+.completed {
+    overflow: auto;
+}
 
 .checkbox {
     margin-top: 15px;
