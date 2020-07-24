@@ -31,4 +31,5 @@ projectCont.addEventListener("click", Todo.render)
 
 let addTodo = document.querySelector(".add-todo")
 addTodo.addEventListener("click", showForms)
+addTodo.addEventListener("click", Todo.checkBox)
 

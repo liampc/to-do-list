@@ -61,13 +61,26 @@ let Todo = (() => {
     }
 
 
+    const checkBox = () => {
+        let checkboxes = document.querySelectorAll(".checkbox")
+        
+        checkboxes.forEach(box => {
+            box.addEventListener("click", (e) => {
+                if (e.target.checked == true){
+                    let card = e.target.parentNode
+                    card.classList.add("checked")
+                }
+            })
+        })
+    }  
+
     //init
 
     getProjectList();
 
 
     return {
-        addNewTodo, render, getProjectList
+        addNewTodo, render, getProjectList, checkBox
     }
 
 })()

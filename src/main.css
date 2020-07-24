@@ -146,6 +146,12 @@ h1 {
     height: 20px;
 }
 
+.checked {
+    background-color: var(--green);
+    
+}
+
+
 .delete-btn {
     border-radius: 10px;
     border: thin solid #808080a8;
