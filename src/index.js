@@ -1,5 +1,5 @@
 import "./main.css"
-import {addCol1, addCol2, showForms, addForms} from "./DOM"
+import {addCol1, addCol2, showForms, addForms, DOM} from "./DOM"
 import {createTags} from "./functions"
 import {Project} from "./project"
 import { Todo } from "./todos"
@@ -9,11 +9,8 @@ import { Todo } from "./todos"
 const content = document.querySelector("#content")
 
 
-// Add main divs
-let mainContainer = createTags("div", "main-container")
-content.append(mainContainer)
-mainContainer.append(addCol1())
-mainContainer.append(addCol2())
+content.append(DOM.container())
+
 
 
 // Events 
@@ -30,7 +27,7 @@ projectCont.addEventListener("click", Todo.getLists)
 projectCont.addEventListener("click", Todo.render)
 
 let addTodo = document.querySelector(".add-todo")
-addTodo.addEventListener("click", showForms)
+addTodo.addEventListener("click", DOM.showForms)
 addTodo.addEventListener("click", Todo.checkBox)
 
 let todoList = document.querySelector(".todo-list")
