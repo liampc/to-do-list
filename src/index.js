@@ -35,4 +35,4 @@ addTodo.addEventListener("click", Todo.checkBox)
 
 let todoList = document.querySelector(".todo-list")
 todoList.addEventListener("click", Todo.checkBox)
-
+todoList.addEventListener("click", Todo.deleteCard)

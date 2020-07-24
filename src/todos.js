@@ -96,9 +96,15 @@ let Todo = (() => {
         }
     }
 
-   
+    const deleteCard = (e) => {
+        if (e.target.className == "delete-btn"){
+            let card = e.target.parentNode
+            let index = card.getAttribute("data-index")
+            todoList.splice(index,1)
+            render()
 
-
+        }
+    }
 
     //init
 
@@ -106,7 +112,7 @@ let Todo = (() => {
 
 
     return {
-        addNewTodo, render, getLists, checkBox, setIndex
+        addNewTodo, render, getLists, checkBox, setIndex, deleteCard
     }
 
 })()
