@@ -9,6 +9,7 @@ const newProject = (name) => {
     const getName = () => name;
     const changeName = (newName) => {
         newName = prompt("Change project Name")
+        if (newName == null || newName == "") return
         name = newName
     };
     const getTodos = () => todos
