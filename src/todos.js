@@ -12,9 +12,10 @@ let Todo = (() => {
 
     //variables
     let todoList;
+    let completedList;
     
 
-    const getProjectList = () => {
+    const getLists = () => {
         let projects = document.querySelectorAll(".project-card")
         let index;
         projects.forEach(project => {
@@ -25,8 +26,10 @@ let Todo = (() => {
         })
         
         if (index !== undefined){
-            let list = Project.projectList[index].getTodos()
-            todoList = list
+            let projlist = Project.projectList[index].getTodos()
+            let complist = Project.projectList[index].getCompletedList()
+            todoList = projlist
+            completedList = complist
         }
         
     }
@@ -39,7 +42,7 @@ let Todo = (() => {
         let priority = select.options[select.selectedIndex].value
         
         let newTodo = new NewNote(note,dueDate, priority)
-        getProjectList()
+        getLists()
         todoList.push(newTodo)
     }
 
@@ -76,11 +79,11 @@ let Todo = (() => {
 
     //init
 
-    getProjectList();
+    getLists();
 
 
     return {
-        addNewTodo, render, getProjectList, checkBox
+        addNewTodo, render, getLists, checkBox
     }
 
 })()

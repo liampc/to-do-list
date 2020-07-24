@@ -26,7 +26,7 @@ let projectCont = document.querySelector(".project-cont")
 projectCont.addEventListener("click", Project.showProjectPage)
 projectCont.addEventListener("click", Project.changeName)
 projectCont.addEventListener("click", Project.selectProject)
-projectCont.addEventListener("click", Todo.getProjectList)
+projectCont.addEventListener("click", Todo.getLists)
 projectCont.addEventListener("click", Todo.render)
 
 let addTodo = document.querySelector(".add-todo")

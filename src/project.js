@@ -4,6 +4,7 @@
 const newProject = (name) => {
     name = "Project";
     let todos = []
+    let completedList = [];
 
     const getName = () => name;
     const changeName = (newName) => {
@@ -11,9 +12,10 @@ const newProject = (name) => {
         name = newName
     };
     const getTodos = () => todos
+    const getCompletedList = () => completedList
 
     return {
-        getName, changeName, getTodos
+        getName, changeName, getTodos, getCompletedList
     }
 };
 
