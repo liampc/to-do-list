@@ -65,11 +65,12 @@
     border-bottom: thin solid grey;
     background-color: var(--white);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 5px 5px 5px 20px;
     box-shadow: 0px 0px 4px 1px grey;
 }
+
 
 .selected {
     background-color: var(--darkestgreen);
@@ -164,7 +165,7 @@ h1 {
 }
 
 
-.delete-btn {
+.delete-btn, .delete-project {
     border-radius: 10px;
     border: thin solid #808080a8;
     color:white;

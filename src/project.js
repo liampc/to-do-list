@@ -46,7 +46,8 @@ const Project = (() => {
             return `
             <div class="project-card">
             <span> ${card.getName()}</span>
-        </div>
+            <button class="delete-project"> x </button>
+            </div>
             `
         }).join("")
 
@@ -74,7 +75,6 @@ const Project = (() => {
             let header = document.querySelector(".project-header h2")
 
             header.innerHTML = name;
-            
         }
     }
         
@@ -91,18 +91,33 @@ const Project = (() => {
     }
 
     const selectProject = (e) => {
-        let projectCards = document.querySelectorAll(".project-card")
-        let project = e.target
+        if (e.target.className == "project-card"){
+            let projectCards = document.querySelectorAll(".project-card")
+            let project = e.target
 
-        projectCards.forEach(card => {
-            card.classList.remove("selected")
-        })
-        project.classList.add("selected")
-
+            projectCards.forEach(card => {
+                card.classList.remove("selected")
+            })
+            project.classList.add("selected")
+        }
+        
     }
 
+    const deleteProject = (e) => {
+        if (e.target.className == "delete-project"){
+            let card = e.target.parentNode
+            let index = card.getAttribute("data-index")
+            projectList.splice(index,1)
+            renderProject()
+            setIndex()
+        }
+    }
+
+    
+
     return {
-        projectList, addNewProject, setIndex, showProjectPage, changeName, selectProject
+        projectList, addNewProject, setIndex, showProjectPage, changeName, selectProject, deleteProject
+
     }
 
 

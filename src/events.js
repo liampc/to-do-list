@@ -16,7 +16,9 @@ const Events = (() => {
         projectCont.addEventListener("click", Project.changeName)
         projectCont.addEventListener("click", Project.selectProject)
         projectCont.addEventListener("click", Todo.getLists)
+        projectCont.addEventListener("click", Project.deleteProject)
         projectCont.addEventListener("click", Todo.render)
+        
     }
 
    const addTodo = () => {
