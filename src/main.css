@@ -80,13 +80,12 @@
 .col2 {
     background-color: var(--white);
     display: grid;
-    grid-template-rows: 13vh 12vh 65vh 10vh;
+    grid-template-rows: 13vh 12vh 35vh 30vh 10vh;
 }
 
 
-.project-header {
+.project-header, .completed h2{
     background-color: var(--darkestgreen);
-    
     display: flex;
     align-items: center;
     padding: 10px 10px 10px 50px;
@@ -148,7 +147,7 @@ h1 {
 
 .checked {
     background-color: var(--green);
-    
+
 }
 
 

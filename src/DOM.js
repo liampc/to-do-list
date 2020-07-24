@@ -38,18 +38,23 @@ function addCol2(){
     let col2 = createTags("div", "col2")
 
     let pHeader = createTags("div", "project-header")
-    let todoList = createTags("div", "todo-list")
-    let todoBtnDiv = createTags("div", "todo-btn-div")
     let forms = createTags("div", "form-field")
+    let todoList = createTags("div", "todo-list")
+    let completedList = createTags("div", "completed")
+    let todoBtnDiv = createTags("div", "todo-btn-div")
+    
 
 
     let pName = createTags("h2")
+    let completed = createTags("h2")
     let addTodo = createTags("button", "add-btn")
     addTodo.classList.add("add-todo")
 
     //text 
     pName.innerHTML = "Project Name"
+    completed.innerHTML = "Completed"
     addTodo.innerHTML = "+"
+
     
 
     //display
@@ -58,8 +63,9 @@ function addCol2(){
 
     //append
     todoBtnDiv.append(addTodo)
+    completedList.append(completed)
     pHeader.append(pName)
-    col2.append(pHeader, forms, todoList, todoBtnDiv)
+    col2.append(pHeader, forms, todoList, completedList, todoBtnDiv)
 
     return col2;
 }
