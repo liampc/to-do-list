@@ -48,7 +48,7 @@ let Todo = (() => {
 
     const render = () => {
         let projlist = document.querySelector(".todo-list")
-        // let complist = document.querySelector(".completed")
+        let complist = document.querySelector(".completed")
 
         let todos = todoList.map(todo => {
             return `
@@ -62,17 +62,16 @@ let Todo = (() => {
             `
         })
 
-        // let done = completedList.map(task => {
-        //     return `
-        //     <div class="todo-card">
-        //     <span> ${task.note}</span>
-        //     <span> ${task.dueDate}</span>
-        //     <span> ${task.priority}</span>
-        //     </div>
-        //     `
-        // })
+        let done = completedList.map(task => {
+            return `
+            <div class="completed-card">
+            <span> ${task.note}</span>
+            <span> ${task.dueDate}</span>
+            </div>
+            `
+        })
 
-        // complist.innerHTML = done
+        complist.innerHTML = done
         projlist.innerHTML = todos;
     }
 
@@ -87,16 +86,22 @@ let Todo = (() => {
 
     const checkBox = () => {
         let checkboxes = document.querySelectorAll(".checkbox")
-        
+
         checkboxes.forEach(box => {
             box.addEventListener("click", (e) => {
                 if (e.target.checked == true){
                     let card = e.target.parentNode
                     card.classList.add("checked")
+                    let index = card.getAttribute("data-index")
+                    let todo = todoList.splice(index, 1)
+                    completedList.push(todo[0])
+                    render()
                 }
             })
         })
-    }  
+    }
+
+   
 
 
 
