@@ -1,35 +1,15 @@
 import "./main.css"
-import {addCol1, addCol2, showForms, addForms, DOM} from "./DOM"
-import {createTags} from "./functions"
-import {Project} from "./project"
-import { Todo } from "./todos"
+import {DOM, Events} from "./DOM"
 
 
-
+//get content id
 const content = document.querySelector("#content")
 
 
+//append all the visuals
 content.append(DOM.container())
 
 
+//initialize the events
+window.addEventListener("load", Events.init)
 
-// Events 
-const addProjectCard = document.querySelector(".add-project")
-addProjectCard.addEventListener("click", Project.addNewProject)
-addProjectCard.addEventListener("click", Project.setIndex)
-
-
-let projectCont = document.querySelector(".project-cont")
-projectCont.addEventListener("click", Project.showProjectPage)
-projectCont.addEventListener("click", Project.changeName)
-projectCont.addEventListener("click", Project.selectProject)
-projectCont.addEventListener("click", Todo.getLists)
-projectCont.addEventListener("click", Todo.render)
-
-let addTodo = document.querySelector(".add-todo")
-addTodo.addEventListener("click", DOM.showForms)
-addTodo.addEventListener("click", Todo.checkBox)
-
-let todoList = document.querySelector(".todo-list")
-todoList.addEventListener("click", Todo.checkBox)
-todoList.addEventListener("click", Todo.deleteCard)

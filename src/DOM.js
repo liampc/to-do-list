@@ -1,7 +1,10 @@
 import "./main.css"
 import {createTags} from "./functions"
 import {Todo} from "./todos"
+import {Project} from "./project"
 
+
+// Module for appending/ showing display
 
 const DOM = (() => {
     //global
@@ -44,25 +47,22 @@ const DOM = (() => {
     const  addCol2 = () => {
         let col2 = createTags("div", "col2")
 
+        //main divs
         let pHeader = createTags("div", "project-header")
         let forms = createTags("div", "form-field")
         let todoList = createTags("div", "todo-list")
         let completedList = createTags("div", "completed")
         let todoBtnDiv = createTags("div", "todo-btn-div")
         
-
-
+        // elements under main divs
         let pName = createTags("h2")
-        //let completed = createTags("h2")
         let addTodo = createTags("button", "add-btn")
         addTodo.classList.add("add-todo")
 
+
         //text 
         pName.innerHTML = "Project Name"
-        //completed.innerHTML = "Completed"
         addTodo.innerHTML = "+"
-
-        
 
         //display
         forms.style.visibility = "hidden"
@@ -70,7 +70,6 @@ const DOM = (() => {
 
         //append
         todoBtnDiv.append(addTodo)
-        //completedList.append(completed)
         pHeader.append(pName)
         col2.append(pHeader, forms, todoList, completedList, todoBtnDiv)
 
@@ -78,7 +77,8 @@ const DOM = (() => {
     }
 
 
-
+    // show the formfields when add button is clicked the first time
+    // save the values of forms when add button is clicked for 2nd time
     const showForms = () => {
         let forms = document.querySelector(".form-field")
 
@@ -95,7 +95,7 @@ const DOM = (() => {
     }
 
 
-
+    // render the todos created using this template
     const addForms = () => {
         let forms = document.querySelector(".form-field")
 
@@ -117,7 +117,7 @@ const DOM = (() => {
     }
 
 
-//init
+    //return the main container
     const container = () => {
         mainContainer.append(addCol1())
         mainContainer.append(addCol2())
@@ -134,5 +134,53 @@ const DOM = (() => {
 }
 )();
 
+// MODULE for Event listeners
 
-export{DOM}
+const Events = (() => {
+
+    const addProjectCard = () => {
+        const addProjectCard = document.querySelector(".add-project")
+        addProjectCard.addEventListener("click", Project.addNewProject)
+        addProjectCard.addEventListener("click", Project.setIndex)
+    }
+
+    const projectCont = () => {
+        const projectCont = document.querySelector(".project-cont")
+        projectCont.addEventListener("click", Project.showProjectPage)
+        projectCont.addEventListener("click", Project.changeName)
+        projectCont.addEventListener("click", Project.selectProject)
+        projectCont.addEventListener("click", Todo.getLists)
+        projectCont.addEventListener("click", Todo.render)
+    }
+
+   const addTodo = () => {
+        const addTodo = document.querySelector(".add-todo")
+        addTodo.addEventListener("click", DOM.showForms)
+        addTodo.addEventListener("click", Todo.checkBox)
+   }
+
+   const todoList = () => {
+        const  todoList = document.querySelector(".todo-list")
+        todoList.addEventListener("click", Todo.checkBox)
+        todoList.addEventListener("click", Todo.deleteCard)
+   }
+
+
+
+    //init
+    const init = () => {
+        addProjectCard()
+        projectCont()
+        addTodo()
+        todoList()
+    }
+
+    return {
+        init
+    }
+
+
+})();
+
+
+export{DOM, Events}
