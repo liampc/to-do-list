@@ -76,6 +76,14 @@ let Todo = (() => {
         projlist.innerHTML = todos;
     }
 
+    const setIndex = () => {
+        let cards = document.querySelectorAll(".todo-card");
+
+        for (let i = 0; i < todoList.length; i++){
+            cards[i].setAttribute("data-index", i)
+            
+        }
+    }
 
     const checkBox = () => {
         let checkboxes = document.querySelectorAll(".checkbox")
@@ -98,7 +106,7 @@ let Todo = (() => {
 
 
     return {
-        addNewTodo, render, getLists, checkBox
+        addNewTodo, render, getLists, checkBox, setIndex
     }
 
 })()

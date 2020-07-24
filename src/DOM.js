@@ -81,6 +81,7 @@ function showForms(){
         forms.style.visibility = "hidden";
         Todo.addNewTodo()
         Todo.render()
+        Todo.setIndex()
       }
 }
 
