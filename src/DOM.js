@@ -115,6 +115,7 @@ const DOM = (() => {
                         <input type="date"  name="due-date" class="due-date">
                         <label for="priority"> Priority </label>
                         <select name="priority" id="priority">
+                            <option value=""> </option>
                             <option value="low"> Low </option>
                             <option value="medium"> Medium </option>
                             <option value="high"> High </option>
