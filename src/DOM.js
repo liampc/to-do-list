@@ -1,7 +1,17 @@
 import "./main.css"
-import {createTags} from "./functions"
 import {Todo} from "./todos"
 
+
+// create tags with className
+
+let createTags = (tag, className) => {
+
+    let element = document.createElement(tag)
+    if (className){
+        element.classList.add(className)
+    }
+    return element
+}
 
 
 // Module for appending/ showing display
