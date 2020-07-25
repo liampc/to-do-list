@@ -2,7 +2,6 @@
 
 
 const newProject = (name) => {
-    //name = "Project";
     let todos = []
     let completedList = [];
 
@@ -29,10 +28,12 @@ const Project = (() => {
 
     //function
     const addNewProject = () => {
-        let name = document.querySelector(".project-name").value
-        let project = newProject(name)
+        let name = document.querySelector(".project-name")
+        if (name.value == "") return
+        let project = newProject(name.value)
         projectList.push(project)
         renderProject()
+        name.value = "";
     }
 
 
@@ -113,7 +114,7 @@ const Project = (() => {
     }
 
     const initial = () =>  {
-        let initial = newProject()
+        let initial = newProject("Project")
         projectList.push(initial)
         renderProject()
         let project = document.querySelector(".project-card")
