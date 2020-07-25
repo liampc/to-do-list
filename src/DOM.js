@@ -28,22 +28,26 @@ const DOM = (() => {
         let banner = createTags("div", "banner-cont")
         let projectCont = createTags("div", "project-cont")
 
-
         let bannerName = createTags("h1")
         let btnDiv = createTags("div", "project-btn-div")
-        let projectH2 = createTags("h2")
+         
+        let inputName = createTags("input", "project-name")
+            inputName.type = "text"
+            inputName.placeholder = "Add Project"
+
+
         let addProjectBtn = createTags("button", "add-btn")
         addProjectBtn.classList.add("add-project")
 
 
         //text 
         bannerName.textContent = "O-Note Again"
-        projectH2.textContent = "Projects"
+
         addProjectBtn.textContent = "+"
         
 
         //append
-        btnDiv.append(projectH2, addProjectBtn)
+        btnDiv.append(inputName, addProjectBtn)
         banner.append(bannerName)
         container.append(banner, btnDiv, projectCont)
 
