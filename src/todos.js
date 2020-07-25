@@ -1,4 +1,5 @@
 import {Project} from './project';
+import {format} from "date-fns"
 
 
 function NewNote(note, dueDate, priority){
@@ -38,6 +39,9 @@ let Todo = (() => {
     const addNewTodo = () => {
         let note = document.querySelector(".input-note").value
         let dueDate = document.querySelector(".due-date").value
+        if (dueDate){
+            dueDate = format(new Date (dueDate), "MMM-dd")
+        }
         let select = document.querySelector("#priority")
         let priority = select.options[select.selectedIndex].value
         
