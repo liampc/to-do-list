@@ -5,18 +5,8 @@ const newProject = (name) => {
     name = name
     let todos = []
     let completedList = [];
-
-    //const getName = () => name;
-    const changeName = (newName) => {
-        newName = prompt("Change project Name")
-        if (newName == null || newName == "") return
-        name = newName
-    };
-    //const getTodos = () => todos
-    //const getCompletedList = () => completedList
-
     return {
-        name, changeName, todos, completedList
+        name, todos, completedList
     }
 };
 
@@ -81,16 +71,6 @@ const Project = (() => {
         
 
 
-    const changeName = (e) => {
-        if (e.target.tagName == "SPAN"){
-            let index = e.target.parentNode.getAttribute("data-index")
-            projectList[index].changeName();
-            renderProject();
-            setIndex();
-        }
-        
-    }
-
     const selectProject = (e) => {
         if (e.target.className == "project-card"){
             let projectCards = document.querySelectorAll(".project-card")
@@ -129,7 +109,7 @@ const Project = (() => {
 
     return {
         projectList, addNewProject, setIndex, 
-        showProjectPage, changeName, selectProject, 
+        showProjectPage, selectProject, 
         deleteProject, initial
 
     }

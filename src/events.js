@@ -13,7 +13,7 @@ const Events = (() => {
     const projectCont = () => {
         const projectCont = document.querySelector(".project-cont")
         projectCont.addEventListener("click", Project.showProjectPage)
-        projectCont.addEventListener("click", Project.changeName)
+        //projectCont.addEventListener("click", Project.changeName)
         projectCont.addEventListener("click", Project.selectProject)
         projectCont.addEventListener("click", Todo.getLists)
         projectCont.addEventListener("click", Project.deleteProject)
