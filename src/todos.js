@@ -27,8 +27,8 @@ let Todo = (() => {
         })
         
         if (index !== undefined){
-            let projlist = Project.projectList[index].getTodos()
-            let complist = Project.projectList[index].getCompletedList()
+            let projlist = Project.projectList[index].todos
+            let complist = Project.projectList[index].completedList
             todoList = projlist
             completedList = complist
         }

@@ -12,11 +12,11 @@ const newProject = (name) => {
         if (newName == null || newName == "") return
         name = newName
     };
-    const getTodos = () => todos
-    const getCompletedList = () => completedList
+    //const getTodos = () => todos
+    //const getCompletedList = () => completedList
 
     return {
-        name, changeName, getTodos, getCompletedList
+        name, changeName, todos, completedList
     }
 };
 
