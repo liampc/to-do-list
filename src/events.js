@@ -26,12 +26,14 @@ const Events = (() => {
         const addTodo = document.querySelector(".add-todo")
         addTodo.addEventListener("click", DOM.showForms)
         addTodo.addEventListener("click", Todo.checkBox)
+        addTodo.addEventListener("click", Project.saveToStorage )
    }
 
    const todoList = () => {
         const  todoList = document.querySelector(".todo-list")
         todoList.addEventListener("click", Todo.checkBox)
         todoList.addEventListener("click", Todo.deleteCard)
+        todoList.addEventListener("click", Project.saveToStorage )
    }
 
 

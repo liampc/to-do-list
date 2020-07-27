@@ -77,6 +77,7 @@ let Todo = (() => {
 
         complist.innerHTML = done
         projlist.innerHTML = todos;
+        Project.saveToStorage()
     }
 
     const setIndex = () => {

@@ -1,6 +1,4 @@
 
-
-
 const newProject = (name) => {
     name = name
     let todos = []
@@ -94,16 +92,7 @@ const Project = (() => {
         }
     }
 
-    const initial = () =>  {
-        let initial = newProject("Project")
-        projectList.push(initial)
-        renderProject()
-        let project = document.querySelector(".project-card")
-        project.classList.add("selected")
-        showProjectPage()
-    }
        
-
     const saveToStorage = () => {
        let projectStrings = JSON.stringify(projectList)
         localStorage.setItem("savedProjects", projectStrings)
@@ -125,7 +114,7 @@ const Project = (() => {
     return {
         projectList, addNewProject, setIndex, 
         showProjectPage, selectProject, 
-        deleteProject, initial, saveToStorage, loadStorage
+        deleteProject, saveToStorage, loadStorage
 
     }
 

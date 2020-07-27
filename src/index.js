@@ -14,6 +14,5 @@ content.append(DOM.container())
 
 //initialize the events
 window.addEventListener("load", Events.init)
-window.addEventListener("load", Project.initial)
 window.addEventListener("load", Project.setIndex)
 window.addEventListener("load", Project.loadStorage)
