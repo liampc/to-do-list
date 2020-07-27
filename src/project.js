@@ -2,10 +2,11 @@
 
 
 const newProject = (name) => {
+    name = name
     let todos = []
     let completedList = [];
 
-    const getName = () => name;
+    //const getName = () => name;
     const changeName = (newName) => {
         newName = prompt("Change project Name")
         if (newName == null || newName == "") return
@@ -15,7 +16,7 @@ const newProject = (name) => {
     const getCompletedList = () => completedList
 
     return {
-        getName, changeName, getTodos, getCompletedList
+        name, changeName, getTodos, getCompletedList
     }
 };
 
@@ -45,7 +46,7 @@ const Project = (() => {
         let cards = projectList.map(card => {
             return `
             <div class="project-card">
-            <span> ${card.getName()}</span>
+            <span> ${card.name}</span>
             <button class="delete-project"> x </button>
             </div>
             `
@@ -71,7 +72,7 @@ const Project = (() => {
     const showProjectPage = (e) => {
         if (e.target.className == "project-card"){
             let index = e.target.getAttribute("data-index")
-            let name = projectList[index].getName()
+            let name = projectList[index].name
             let header = document.querySelector(".project-header h2")
 
             header.innerHTML = name;
