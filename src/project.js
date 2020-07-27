@@ -87,6 +87,7 @@ const Project = (() => {
             let card = e.target.parentNode
             let index = card.getAttribute("data-index")
             projectList.splice(index,1)
+            Project.saveToStorage()
             renderProject()
             setIndex()
         }
