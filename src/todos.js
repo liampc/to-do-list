@@ -75,6 +75,8 @@ let Todo = (() => {
             `
         }).join("")
 
+        let addBtn = document.querySelector(".add-todo")
+        addBtn.style.visibility = "visible"
         complist.innerHTML = done
         projlist.innerHTML = todos;
         Project.saveToStorage()

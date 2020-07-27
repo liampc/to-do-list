@@ -1,5 +1,6 @@
 import "./main.css"
 import {Todo} from "./todos"
+import { add } from "date-fns"
 
 
 // create tags with className
@@ -77,6 +78,7 @@ const DOM = (() => {
 
         //display
         forms.style.visibility = "hidden"
+        addTodo.style.visibility = "hidden"
         
 
         //append
