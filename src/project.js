@@ -14,7 +14,7 @@ const newProject = (name) => {
 const Project = (() => {
 
     //global Data
-    const projectList = []
+    let projectList = []
 
 
     //function
@@ -104,13 +104,28 @@ const Project = (() => {
     }
        
 
-    
+    const saveToStorage = () => {
+       let projectStrings = JSON.stringify(projectList)
+        localStorage.setItem("savedProjects", projectStrings)
+    }
+
+    const loadStorage = () => {
+        let getProjects = JSON.parse(localStorage.getItem("savedProjects"))
+        if (getProjects !== null){
+            getProjects.forEach(project => [
+                projectList.push(project)
+            ])
+        }
+        renderProject()
+        setIndex()
+        console.log(projectList)
+    }
 
 
     return {
         projectList, addNewProject, setIndex, 
         showProjectPage, selectProject, 
-        deleteProject, initial
+        deleteProject, initial, saveToStorage, loadStorage
 
     }
 

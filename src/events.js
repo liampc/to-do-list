@@ -8,12 +8,13 @@ const Events = (() => {
         const addProjectCard = document.querySelector(".add-project")
         addProjectCard.addEventListener("click", Project.addNewProject)
         addProjectCard.addEventListener("click", Project.setIndex)
+        addProjectCard.addEventListener("click", Project.saveToStorage )
+
     }
 
     const projectCont = () => {
         const projectCont = document.querySelector(".project-cont")
         projectCont.addEventListener("click", Project.showProjectPage)
-        //projectCont.addEventListener("click", Project.changeName)
         projectCont.addEventListener("click", Project.selectProject)
         projectCont.addEventListener("click", Todo.getLists)
         projectCont.addEventListener("click", Project.deleteProject)
